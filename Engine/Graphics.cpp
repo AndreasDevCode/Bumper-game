@@ -335,6 +335,9 @@ void Graphics::DrawRect( int x0,int y0,int x1,int y1,Color c )
 		}
 	}
 }
+void Graphics::DrawRect(const RectF & rec, Color c) {
+		DrawRect(int(rec.left), int(rec.top), int(rec.right), int(rec.bottom), c);
+	}
 
 void Graphics::DrawCircle( int x,int y,int radius,Color c )
 {
