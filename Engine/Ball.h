@@ -6,9 +6,17 @@
 class Ball 
 {
 public:
-	Ball(const RectF& rec);
-	void Draw(SpriteCodex& sprite, Graphics& gfx);
+	Ball(const Vec2& pos_in, const Vec2& vel_in );
+	void Draw( Graphics& gfx);
+	void Update(float dt);
+	bool DoWallCollision(const RectF& walls);
+	void ReboundX();
+	void ReboundY();
+	RectF GetRect() const;
 public:
-	RectF ball;
+	static constexpr float radius = 7.0f;
+	Vec2 pos;
+	Vec2 vel;
+	
 	
 };

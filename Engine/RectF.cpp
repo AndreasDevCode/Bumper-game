@@ -25,3 +25,8 @@ bool RectF::IsOverLapping(const RectF & rec)
 {
 	return right > rec.left && left < rec.right  && top < rec.bottom && bottom >rec.top;
 }
+
+RectF RectF::FromCenter(const Vec2& pos_in, float half_right, float half_bottom ) {
+	const Vec2 half(half_right, half_bottom);
+	return RectF(pos_in - half, pos_in + half);
+}
